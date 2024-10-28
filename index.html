@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Posting Board</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Job Posting Board</h1>
+        <nav>
+            <button id="homeTab">Home</button>
+            <button id="aboutUsTab">About Us</button>
+            <button id="helpTab">Help</button>
+            <button id="showEmployerForm">Post a Job</button>
+            <button id="showJobSeekerForm">Apply for a Job</button>
+        </nav>
+        <input type="text" id="searchBar" placeholder="Search jobs..." />
+        <label class="toggle">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <div id="homeSection">
+        <div class="form-container" id="jobForm" style="display: none;">
+            <h2>Post a Job</h2>
+            <form id="employerForm">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" required>
+                <label for="jobCategory">Category</label>
+                <input type="text" id="jobCategory" required>
+                <label for="jobLocation">Location</label>
+                <input type="text" id="jobLocation" required>
+                <label for="jobType">Job Type</label>
+                <select id="jobType" required>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <label for="jobDescription">Description</label>
+                <textarea id="jobDescription" rows="4" required></textarea>
+                <button type="submit">Submit Job</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="applicationForm" style="display: none;">
+            <h2>Apply for a Job</h2>
+            <form id="jobSeekerForm">
+                <label for="applicantName">Your Name</label>
+                <input type="text" id="applicantName" required>
+                <label for="applicantEmail">Your Email</label>
+                <input type="email" id="applicantEmail" required>
+                <label for="applicantResume">Resume</label>
+                <input type="file" id="applicantResume" required>
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+
+        <div id="jobListings">
+            <h2>Available Jobs</h2>
+            <div class="job-list" id="jobList"></div>
+        </div>
+
+        <div id="jobDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="jobDetailTitle"></h2>
+                <p><strong>Category:</strong> <span id="jobDetailCategory"></span></p>
+                <p><strong>Location:</strong> <span id="jobDetailLocation"></span></p>
+                <p><strong>Type:</strong> <span id="jobDetailType"></span></p>
+                <p><strong>Description:</strong> <span id="jobDetailDescription"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="aboutUsSection" style="display: none;">
+        <h2>About Us</h2>
+        <p>Welcome to the Job Posting Board! We connect employers with job seekers in various industries. Our platform is designed to simplify the hiring process and help candidates find their dream jobs.</p>
+        <p>Our mission is to create a seamless experience for both employers and job seekers, making job postings and applications straightforward and efficient.</p>
+    </div>
+
+    <div id="helpSection" class="form-container" style="display: none;">
+        <h2>Help & FAQs</h2>
+        <div id="faqList">
+            <h3>Frequently Asked Questions</h3>
+            <ul>
+                <li><strong>How do I post a job?</strong> Click on 'Post a Job' and fill out the form.</li>
+                <li><strong>How can I apply for a job?</strong> Click on 'Apply for a Job' and fill out the application form.</li>
+                <li><strong>What types of jobs can I post?</strong> You can post any job in various categories like Technology, Finance, etc.</li>
+                <li><strong>How do I contact support?</strong> You can submit your query below.</li>
+            </ul>
+        </div>
+        <h3>Submit a Query</h3>
+        <form id="queryForm">
+            <label for="queryName">Your Name</label>
+            <input type="text" id="queryName" required>
+            <label for="queryEmail">Your Email</label>
+            <input type="email" id="queryEmail" required>
+            <label for="queryMessage">Your Message</label>
+            <textarea id="queryMessage" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Job Posting Board. All rights reserved.</p>
+        <p>Follow us on <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
